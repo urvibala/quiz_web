@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+    <!-- Link to the external CSS file for styling -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Display the title of the quiz -->
+    <h1>Quiz Question</h1>
+    <div id="quiz-div">
+        <form method="POST" action="/answer">
+            <!-- Display the question number and question text -->
+            <p>{{ question_number }}: {{ question }}</p>
+            
+            <!-- Create a label and radio button for "True" answer -->
+            <label class="button-label1" for="true">
+                <input class="radio-button" type="radio" id="true" name="answer" value="True">
+                True
+            </label>
+            
+            <!-- Create a label and radio button for "False" answer -->
+            <label class="button-label2" for="false">
+                <input class="radio-button" type="radio" id="false" name="answer" value="False">
+                False
+            </label>
+            
+            <br>
+            
+            <!-- Submit button to submit the answer -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
